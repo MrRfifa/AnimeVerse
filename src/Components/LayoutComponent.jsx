@@ -1,13 +1,15 @@
 import React from "react";
 import {
   AlertOutlined,
+  BulbOutlined,
   HomeOutlined,
   NotificationOutlined,
   OrderedListOutlined,
 } from "@ant-design/icons";
 import { Avatar, Col, Layout, Menu, Row, theme } from "antd";
 import icon from "../assets/aniverse.png";
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
+import PropTypes from "prop-types";
 
 const data = [
   {
@@ -35,8 +37,14 @@ const data = [
     icon: AlertOutlined,
     label: "News",
     clickEvent: () => {
-      localStorage.clear();
       window.location.href = "/news";
+    },
+  },
+  {
+    icon: BulbOutlined,
+    label: "About",
+    clickEvent: () => {
+      window.location.href = "/about";
     },
   },
 ];
@@ -96,12 +104,6 @@ const LayoutComponent = ({ mainContent, currentPage }) => {
           marginLeft: 200,
         }}
       >
-        <Header
-          style={{
-            padding: 0,
-            background: colorBgContainer,
-          }}
-        />
         <Content
           style={{
             margin: "24px 16px 0",
@@ -133,4 +135,10 @@ const LayoutComponent = ({ mainContent, currentPage }) => {
     </Layout>
   );
 };
+
+LayoutComponent.propTypes = {
+  currentPage: PropTypes.string.isRequired,
+  mainContent: PropTypes.node.isRequired,
+};
+
 export default LayoutComponent;

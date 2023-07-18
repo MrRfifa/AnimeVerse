@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const latestAnimeApiHeaders = {
-  "X-RapidAPI-Key": "6dfd644f7emsh2b2b9925cfeeaaep1589d4jsn5674788b356f",
+  "X-RapidAPI-Key": import.meta.env.VITE_APP_RAPID_API_KEY,
   "X-RapidAPI-Host": "latest-anime-api.p.rapidapi.com",
 };
 

@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Col, Pagination, Row } from "antd";
-import LayoutComponent from "./LayoutComponent";
+import { Pagination } from "antd";
+import LayoutComponent from "../Components/LayoutComponent";
 import { useGetLatestQuery } from "../services/LatestAnimesApi";
-import CardComponent from "./CardComponent";
+import LoadingComponent from "./../Components/LoadingComponent";
+import GridComponent from "../Components/GridComponent";
+import CardComponent from "./../Components/CardComponent";
 
 const Home = () => {
   const { data, isFetching } = useGetLatestQuery();
@@ -19,26 +21,24 @@ const Home = () => {
 
   const Page = () => {
     if (isFetching) {
-      return "Loading...";
+      return <LoadingComponent text="Please wait for the list" />;
     }
-
+    const renderItem = (item) => (
+      <CardComponent
+        news={false}
+        image={item.img_url}
+        id={item.id}
+        name={item.name}
+        key={item.id}
+      />
+    );
     const paginationText = `${startIndex + 1}-${
       startIndex + visibleData.length
     } of ${totalLatest}`;
 
     return (
       <>
-        <Row gutter={[16, 24]}>
-          {visibleData.map((item) => (
-            <Col key={item.id} span={6}>
-              <CardComponent
-                image={item.img_url}
-                id={item.id}
-                name={item.name}
-              />
-            </Col>
-          ))}
-        </Row>
+        <GridComponent data={visibleData} renderItem={renderItem} />
         <Pagination
           current={currentPage}
           onChange={handlePageChange}

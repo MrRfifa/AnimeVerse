@@ -1,9 +1,10 @@
-import { Route, Routes } from "react-router-dom";
-import Home from "./Components/Home";
-import TopAnimes from './Components/TopAnimes';
-import AnimeVoice from './Components/AnimeVoice';
-import News from './Components/News';
-import AnimeDetails from './Components/AnimeDetails';
+import { Route, Routes, Navigate } from "react-router-dom";
+import Home from "./pages/Home";
+import TopAnimes from "./pages/TopAnimes";
+import AnimeVoice from "./pages/AnimeVoice";
+import News from "./pages/News";
+import AnimeDetails from "./pages/AnimeDetails";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Route exact path="/voice" element={<AnimeVoice />} />
         <Route exact path="/news" element={<News />} />
         <Route exact path="/detail/:id" element={<AnimeDetails />} />
+        <Route exact path="/about" element={<About />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>
   );
