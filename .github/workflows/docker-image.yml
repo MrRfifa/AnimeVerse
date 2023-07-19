@@ -33,7 +33,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18.15'  # Change this to the version of Node.js you're using for your project
+        node-version: '18'  # Change this to the version of Node.js you're using for your project
 
     - name: Install dependencies
       run: npm install
@@ -45,4 +45,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.SECRET_GITHUB_TOKEN }}
-        publish_dir: ./dist  # Change this to the build output directory
+        publish_dir: ./  # Change this to the build output directory
