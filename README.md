@@ -1,5 +1,9 @@
 # AnimeVerse
 
+Using GitHub Actions to create a CI/CD pipeline as shown in the image.
+
+![cicd](https://github.com/MrRfifa/AnimeVerse/assets/101003527/309ff1bc-1a05-4f03-91fb-ad1ac5d6984c)
+
 Latest Animes page 
 ![latest_anime](https://github.com/MrRfifa/AnimeVerse/assets/101003527/7771ceba-e0ea-4760-9d4b-32af3803806d)
 
