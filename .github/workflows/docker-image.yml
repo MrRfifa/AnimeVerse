@@ -24,6 +24,8 @@ jobs:
 
   build_and_host:
     runs-on: ubuntu-latest
+    env:
+      VITE_APP_RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
 
     steps:
     - name: Checkout the repository
