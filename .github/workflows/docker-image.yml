@@ -38,11 +38,14 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Deploy to Netlify
-        run: |
-          npm install -g netlify-cli
-          netlify login # Authenticate with Netlify (not needed if you don't want to associate this deployment with your account)
-          netlify deploy --prod --dir=./dist --auth ${{ secrets.NETLIFY_SECRET_KEY }}
+      - name: Deploy production to Netlify
+        uses: South-Paw/action-netlify-deploy@v1.2.0
+        with:
+          github-token: ${{ secrets.SECRET_GITHUB_TOKEN }}
+          netlify-auth-token: ${{ secrets.NETLIFY_SECRET_KEY }}
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+          build-dir: './dist'
+          comment-on-commit: true
 
       - name: Success message
         run: echo "Deployment to Netlify completed successfully!"
