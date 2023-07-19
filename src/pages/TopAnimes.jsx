@@ -2,7 +2,7 @@ import { Pagination } from "antd";
 import GridComponent from "../Components/GridComponent";
 import LayoutComponent from "../Components/LayoutComponent";
 import LoadingComponent from "../Components/LoadingComponent";
-import { useGetTopQuery } from "../services/TopANimesApi";
+import { useGetTopQuery } from "../services/TopAnimesApi";
 import { useState } from "react";
 import CardComponent from "../Components/CardComponent";
 import { Link } from "react-router-dom";

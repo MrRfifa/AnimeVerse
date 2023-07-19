@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { LatestAnimeApi } from "../services/LatestAnimesApi";
-import { topAnimeApi } from "../services/TopANimesApi";
+import { topAnimeApi } from "../services/TopAnimesApi";
 import { animeDetailsApi } from "../services/AnimeDetailsApi";
 import { waifuVoiceApi } from "../services/WaifuVoiceApi";
 import { AnimeNewsApi } from "../services/AnimeNewsApi";
